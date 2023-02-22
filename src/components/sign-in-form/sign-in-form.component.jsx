@@ -14,7 +14,6 @@ const SignInForm = () => {
     const [formValues, setFormValues] = useState(defaultFormValues);
     const {  email, password } = formValues;
 
-    console.log(formValues)
 
     const resetForm = () => {
         setFormValues(defaultFormValues);
@@ -27,14 +26,29 @@ const SignInForm = () => {
             console.log(response);
             resetForm();
         } catch (error) {
-           
-        }
+           switch (error.code) {
+                case "auth/user-not-found":
+                    console.log("User not found");
+                    break;
+                case "auth/wrong-password":
+                    console.log("Wrong password");
+                    break;
+                default:
+                    console.log("Error signing in", error.code);
+                    break;
+                    
+        } 
     };
+};
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
-    };
+        try {
+            const { user } = await signInWithGooglePopup();
+            await createUserDocumentFromAuth(user);
+    }   catch (error) {
+        console.log("Error signing in with Google", error.code);
+    }
+};
 
 
     const handleChange = (e) => {
@@ -48,12 +62,12 @@ const SignInForm = () => {
             <span>Sign in with your email and password</span>
             <form onSubmit={handleSubmit}>
                
-                <FormInput type="email" label="email" name="email" onChange={handleChange} value={email}required/>
+                <FormInput type="email" label="email" name="email" onChange={handleChange} value={email} required/>
                 <FormInput type="password" label="Password" name="password" onChange={handleChange} value={password} required/>
                
                 <div className='buttons-container'>
-                    <Button  onClick={handleSubmit} type="submit">Sign In</Button>
-                    <Button  buttonType='google' onClick={signInWithGoogle} type="submit">Google Sign In</Button>
+                    <Button  type="submit">Sign In</Button>
+                    <Button  buttonType='google' onClick={signInWithGoogle} type="button">Google Sign In</Button>
                 </div>
             </form>
         </div>

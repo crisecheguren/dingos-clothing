@@ -16,8 +16,6 @@ const SignUpForm = () => {
     const [formValues, setFormValues] = useState(defaultFormValues);
     const { displayName, email, password, confirmPassword } = formValues;
 
-    console.log(formValues)
-
     const resetForm = () => {
         setFormValues(defaultFormValues);
     };
