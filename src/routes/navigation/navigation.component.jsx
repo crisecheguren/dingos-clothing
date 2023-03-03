@@ -14,7 +14,6 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
-  console.log('Navigation',currentUser);
   
 
   
