@@ -15,7 +15,9 @@ import { getFirestore,
          getDoc, 
          setDoc,
          collection,
-         writeBatch, 
+         writeBatch,
+         query,
+         getDocs, 
         } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -52,6 +54,20 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
     console.log("Batch commit successful");
 
 }
+
+export const getCategoriesAndDocuments = async () => {
+    const categoriesRef = collection(db, "categories");
+    const q = query(categoriesRef);
+    const querySnapshot = await getDocs(q);
+    const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+      const { title, items } = docSnapshot.data();
+      acc[title.toLowerCase()] = items;
+      return acc;
+    }, {});  
+
+    return categoryMap;
+}
+
 
 export const createUserDocumentFromAuth = async (
     userAuth, 
