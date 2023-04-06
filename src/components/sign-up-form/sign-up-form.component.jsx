@@ -4,7 +4,8 @@ import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '
 
 
 import Button from '../button/button.component';
-import './sign-up-form.styles.scss'
+import { SignUpContainer, SignUpTitle } from './sign-up-form.styles';
+
 
 
 const defaultFormValues = {
@@ -52,8 +53,8 @@ const SignUpForm = () => {
     };
 
     return (
-        <div className='sign-up-container'>
-            <h2>Don't have an account?</h2>
+        <SignUpContainer>
+            <SignUpTitle>Don't have an account?</SignUpTitle>
             <span>Sign Up with your email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput type="text" name="displayName" label="Display Name" onChange={handleChange} value={displayName} required/>
@@ -62,7 +63,7 @@ const SignUpForm = () => {
                 <FormInput type="password" label="Confirm Password" name="confirmPassword" onChange={handleChange} value={confirmPassword} required/>
                 <Button  onClick={handleSubmit} type="submit">Sign Up</Button>
             </form>
-        </div>
+        </SignUpContainer>
     );
 };
 

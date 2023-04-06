@@ -1,7 +1,8 @@
-import './form-input.styles.scss'
+import { GroupContainer } from "./form-input.styles";
+
 const FormInput = ({ label, ...otherProps }) => {
     return (
-        <div className="group">
+        <GroupContainer>
             <input className='form-input' {...otherProps}/>
             {label && ( 
                 <label 
@@ -12,7 +13,7 @@ const FormInput = ({ label, ...otherProps }) => {
                 </label> 
             )}
             
-        </div>
+        </GroupContainer>
     );
 };
 
