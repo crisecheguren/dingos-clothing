@@ -18,6 +18,12 @@ const CartDropdown = () => {
     return (
         <CartDropdownContainer>
             <div className="cart-items">
+                {
+                    cartItems.length === 0 ?
+                    <span className="empty-message">Your cart is empty</span>
+                    : null
+                    
+                }
                 {cartItems.map ( item => <CartItem key={item.id} cartItem={item} />)}
             </div>
                 <Button onClick={handleCheckout} buttonType={'inverted'}>Go to checkout</Button>
