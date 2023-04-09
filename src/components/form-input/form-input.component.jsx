@@ -1,16 +1,13 @@
-import { GroupContainer } from "./form-input.styles";
+import { GroupContainer, FormInputLabel, Input } from "./form-input.styles";
 
 const FormInput = ({ label, ...otherProps }) => {
     return (
         <GroupContainer>
-            <input className='form-input' {...otherProps}/>
+            <Input {...otherProps}/>
             {label && ( 
-                <label 
-                    className={`${ 
-                        otherProps.value.length ? 'shrink' : '' 
-                    } form-input-label`}>
+                <FormInputLabel shrink={otherProps.value.length}>
                         {label}
-                </label> 
+                </FormInputLabel> 
             )}
             
         </GroupContainer>
