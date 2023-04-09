@@ -2,7 +2,7 @@
   "name": "dingos-clothing",
   "version": "0.1.0",
   "homepage": "https://crisecheguren.github.io/dingos-clothing",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
