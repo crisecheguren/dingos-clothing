@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/dingos-clothing/static/css/main.f69848be.css",
+    "main.js": "/dingos-clothing/static/js/main.304a9499.js",
+    "static/js/787.2109a0b0.chunk.js": "/dingos-clothing/static/js/787.2109a0b0.chunk.js",
+    "static/media/crown.svg": "/dingos-clothing/static/media/crown.3a4e2b15908e7a4c25343677d232b7e6.svg",
+    "index.html": "/dingos-clothing/index.html",
+    "static/media/shopping-bag.svg": "/dingos-clothing/static/media/shopping-bag.7d3b018c2275f55a46001a89c3c364bc.svg",
+    "main.f69848be.css.map": "/dingos-clothing/static/css/main.f69848be.css.map",
+    "main.304a9499.js.map": "/dingos-clothing/static/js/main.304a9499.js.map",
+    "787.2109a0b0.chunk.js.map": "/dingos-clothing/static/js/787.2109a0b0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f69848be.css",
+    "static/js/main.304a9499.js"
+  ]
+}
