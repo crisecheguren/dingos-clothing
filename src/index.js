@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-
-import { CartProvider } from './contexts/cart.context';
 import { store } from './store/store';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
@@ -16,9 +14,9 @@ root.render(
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         
           
-            <CartProvider>
+            
               <App />
-            </CartProvider>
+            
           
         
       </BrowserRouter>
